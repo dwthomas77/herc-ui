@@ -1,57 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import TextField from 'material-ui/TextField';
 
 const propTypes = {
     autoComplete: PropTypes.string,
+    autoFocus: PropTypes.bool,
+    defaultValue: PropTypes.string,
+    disabled: PropTypes.bool,
     error: PropTypes.bool,
+    fullWidth: PropTypes.bool,
+    helperText: PropTypes.node,
+    helperTextClassName: PropTypes.string,
     id: PropTypes.string.isRequired,
     label: PropTypes.string,
-    msg: PropTypes.string,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     type: PropTypes.string,
-    value: PropTypes.string,
 };
 
 const defaultProps = {
     autoComplete: '',
+    autoFocus: false,
+    defaultValue: '',
+    disabled: false,
     error: false,
+    fullWidth: false,
+    helperText: null,
+    helperTextClassName: '',
     label: '',
-    msg: '',
     onBlur: null,
     onChange: null,
     type: 'text',
-    value: '',
 };
 
-const Input = props => {
-    const {
-        error,
-        id,
-        label,
-        msg,
-        ...rest
-    } = props;
+class Input extends Component {
+
+    state = { value: this.props.value };
     
-    const labelProps = {
-        htmlFor: id,
+    handleChange = event => {
+        this.setState({ value: event.target.value })
     };
     
-    const inputProps = {
-        id,
-        ...rest,
-    };
-    
-    const fieldClass = error ? '--error' : '';
-    
-    return (
-        <fieldset className={fieldClass}>
-            <label {...labelProps}>{label}</label>
-            <input {...inputProps} />
-            <div>{msg}</div>
-        </fieldset>
-    );
+    render() {
+        
+        const inputProps = {
+            ...this.props,
+            onChange: this.handleChange,
+        };
+        
+        return (
+            <TextField {...this.props} />
+        );
+    }
+
 };
 
 Input.propTypes = propTypes;

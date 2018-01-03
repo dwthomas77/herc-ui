@@ -8,35 +8,36 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 /** APP **/
 import AuthorizedRoute from 'controllers/Route';
-import Authorized from 'components/Authorized';
-import Home from 'components/Home';
-import UserAuth from 'controllers/UserAuth';
-import PasswordReset from 'controllers/PasswordReset';
-import PasswordChange from 'controllers/PasswordChange';
-import Navigation from 'controllers/Navigation';
+import Home from 'controllers/Home';
+import Login from 'controllers/Login';
 import 'normalize.css';
+import 'typeface-roboto';
 import './App.css';
-
+/** MATERIAL UI **/
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import theme from 'theme.js';
+const hercTheme = createMuiTheme(theme);
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+    }
+    
     render() {
         const { store, history } = this.props;
         return (
-            <Provider store={store}>
-                <ConnectedRouter history={history}>
-                    <div className="app">
-                        <Navigation />
-                        <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route path="/user/" component={UserAuth} />
-                            <Route path="/user/change" component={PasswordChange} />
-                            <Route path="/user/reset" component={PasswordReset} />
-                            <AuthorizedRoute path="/authorized" component={Authorized} />
-                            <Route path="/reset-password" component={PasswordReset} />
-                        </Switch>
-                    </div>
-                </ConnectedRouter>
-            </Provider>
+            <MuiThemeProvider theme={hercTheme}>
+                <Provider store={store}>
+                    <ConnectedRouter history={history}>
+                        <div className="app">
+                            <Switch>
+                                <Route exact path="/" component={Home} />
+                                <Route path="/login/" component={Login} />
+                            </Switch>
+                        </div>
+                    </ConnectedRouter>
+                </Provider>
+            </MuiThemeProvider>
         );
     }
 }

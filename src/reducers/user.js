@@ -1,10 +1,12 @@
 import {
     SET_USER,
-} from 'constants.js';
+} from '../constants';
 
 const defaultUser = {
-    email: '',
-    uid: null,
+    permissions: {},
+    name: '',
+    uid: '',
+    authInitiated: false,
 };
 
 function user(state = defaultUser, action) {
