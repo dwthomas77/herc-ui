@@ -1,0 +1,8 @@
+.project {
+  padding: 15px;
+  border-bottom: thin darkgray solid;
+}
+
+.project__description {
+  padding: 10px 0;
+}

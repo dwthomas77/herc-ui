@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from 'material-ui/styles';
 import Input from 'components/Input';
 import Button from 'material-ui/Button';
+import LoadingScreen from 'components/LoadingScreen';
 import './styles.css';
 import hercLogo from 'static/herc_logo.png';
 
@@ -109,8 +110,13 @@ class Login extends Component {
         };
 
         if (user.uid) {
-            // emailInput.disabled = true;
-            // passwordInput.disabled = true;
+            
+        }
+        
+        console.log('user suth init', user.authInitiated);
+        
+        if (!user.authInitiated) {
+            return <div className="login__loading-screen"><LoadingScreen /></div>;
         }
         
         return (

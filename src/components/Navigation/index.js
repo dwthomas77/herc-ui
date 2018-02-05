@@ -15,15 +15,36 @@ const styles = {
     flex: {
         flex: 1,
     },
+    link: {
+        color: 'white',
+        textDecoration: 'none',
+    },
+    loginButton: {
+        color: 'white',
+        fontSize: '12px',
+    },
     white: { color: 'white' },
+    navTitle: {
+        color: 'white',
+        fontWeight: 'normal',
+    },
     toolbar: {
         justifyContent: 'space-between',
     }
 };
 
 const Navigation = (props) => {
-    const { classes, user } = props;
-    const loginText = user.uid ? 'LOGOUT' : 'LOGIN';
+    const { classes, logoutUser, user } = props;
+    const authorized = !!user.uid;
+    
+    const loginButtonProps = {
+        className: classes.loginButton,
+        onClick: authorized ? logoutUser : () => null,
+    };
+    
+    
+    const loginAction = user.uid ? 'LOGOUT'
+        : <Link to="/login" className={classes.link}>LOGIN</Link>;
     return (
         <div className={classes.root}>
             <AppBar position="static">
@@ -31,10 +52,10 @@ const Navigation = (props) => {
                     <IconButton aria-label="Menu" className={classes.white}>
                         <MenuIcon />
                     </IconButton>
-                    <Typography type="title" className={classes.white}>
+                    <Typography type="title" className={classes.navTitle}>
                         All Projects
                     </Typography>
-                    <Button className={classes.white}>{loginText}</Button>
+                    <Button {...loginButtonProps}>{loginAction}</Button>
                 </Toolbar>
             </AppBar>
         </div>

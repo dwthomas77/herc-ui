@@ -7,8 +7,8 @@ import { ConnectedRouter } from 'react-router-redux';
 /** REDUX **/
 import { Provider } from 'react-redux';
 /** APP **/
-import AuthorizedRoute from 'controllers/Route';
-import Home from 'controllers/Home';
+import AuthorizedRoute, { LoginRouteController } from 'controllers/Route';
+import Projects from 'controllers/Projects';
 import Login from 'controllers/Login';
 import 'normalize.css';
 import 'typeface-roboto';
@@ -31,8 +31,8 @@ class App extends Component {
                     <ConnectedRouter history={history}>
                         <div className="app">
                             <Switch>
-                                <Route exact path="/" component={Home} />
-                                <Route path="/login/" component={Login} />
+                                <AuthorizedRoute exact path="/" component={Projects} />
+                                <LoginRouteController path="/login/" component={Login} />
                             </Switch>
                         </div>
                     </ConnectedRouter>

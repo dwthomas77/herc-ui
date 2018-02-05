@@ -1,0 +1,15 @@
+.appointment {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    font-weight: bold;
+}
+
+.appointment_date_col,
+.appointment_hours_col,
+.appointment_people_col {
+    width: 30%;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+}

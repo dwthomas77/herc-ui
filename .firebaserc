@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "login-demo-app-4bafa"
+    "default": "login-demo-app-4bafa",
+    "herc": "herc-ui"
   }
 }

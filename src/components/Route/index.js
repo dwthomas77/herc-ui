@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LoadingScreen from 'components/LoadingScreen';
 
 import {
     Route,
@@ -12,14 +13,11 @@ const propTypes = {
 };
 
 const AuthorizedRoute = ({ user, component: Component, ...rest }) => {
- 
-    console.log('user is', user);
-    
-    const { uid } = user;
-    
+    const { authInitiated, uid } = user;
     return (
         <Route {...rest} render={props => (
-            !!uid ? (
+            !authInitiated ? <LoadingScreen />
+            : !!uid ? (
                     <Component {...props}/>
                 ) : (
                     <Redirect to={{
@@ -33,3 +31,22 @@ const AuthorizedRoute = ({ user, component: Component, ...rest }) => {
 };
 
 export default AuthorizedRoute;
+
+export const LoginRoute = ({ user, component: Component, ...rest }) => {
+    const { authInitiated, uid } = user;
+    return (
+        <Route {...rest} render={props => (
+            !authInitiated ? <LoadingScreen />
+                : uid ? (
+                    <Redirect to={{
+                        pathname: '/',
+                        state: { from: props.location }
+                    }}/>
+                    ) : (
+                        <Component {...props}/>
+                    )
+        )}/>
+    );
+
+};
+

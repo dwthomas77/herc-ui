@@ -13,7 +13,7 @@ function user(state = defaultUser, action) {
     const { type, user } = action;
 
     if (type === SET_USER) {
-        return {...user};
+        return {...user, authInitiated: true};
     } else {
         return state;
     }

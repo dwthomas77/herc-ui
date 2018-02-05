@@ -1,0 +1,11 @@
+.loading-screen {
+    height: 100%;
+    background-color: #4da300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-screen img {
+    width: 175px;
+}
