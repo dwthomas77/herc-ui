@@ -3,9 +3,6 @@ import Appointment from 'components/Appointment';
 import './styles.css';
 
 const Project = (props) => {
-    
-    console.log('props are', props);
-    
     const {
         appointments,
         description,

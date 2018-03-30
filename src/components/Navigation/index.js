@@ -42,14 +42,13 @@ const Navigation = (props) => {
         onClick: authorized ? logoutUser : () => null,
     };
     
-    
     const loginAction = user.uid ? 'LOGOUT'
         : <Link to="/login" className={classes.link}>LOGIN</Link>;
     return (
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar className={classes.toolbar}>
-                    <IconButton aria-label="Menu" className={classes.white}>
+                    <IconButton aria-label="Menu" className={classes.white} onClick={props.menuClick}>
                         <MenuIcon />
                     </IconButton>
                     <Typography type="title" className={classes.navTitle}>

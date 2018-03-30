@@ -113,8 +113,6 @@ class Login extends Component {
             
         }
         
-        console.log('user suth init', user.authInitiated);
-        
         if (!user.authInitiated) {
             return <div className="login__loading-screen"><LoadingScreen /></div>;
         }

@@ -13,3 +13,7 @@ export const RESET_ERRORS = 'RESET_ERRORS';
 /** ERROR KEYS **/
 export const LOGIN_ERROR_KEY = 'LOGIN_ERROR_KEY';
 export const REGISTER_ERROR_KEY = 'REGISTER_ERROR_KEY';
+
+/** MENUS **/
+export const SET_MENU = 'SET_MENU';
+export const TOGGLE_MENU = 'TOGGLE_MENU';
