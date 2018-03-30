@@ -31,24 +31,29 @@ class UserMenu extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { activeIndex: 0 }
+        this.state = { activeIndex: 0 };
+        //this.itemClick = this.itemClick.bind(this);
     }
+
+    itemClick = (index) => () => {
+        this.setState({activeIndex: index});
+    };
 
     generateMenuItem = ({ icon: Icon, label }, index) => {
         const { activeIndex } = this.state;
         const isActive = activeIndex === index;
-        const color = isActive  ? 'primary' : 'secondary';
+        const color = isActive  ? 'primary' : 'inherit';
         
         const primaryTextComponent = !isActive ? label
             : <Typography type="body2" style={{fontSize: '18px'}} color={color}>{label}</Typography>;
-        
+            
         const listItemTextComponent = <ListItemText
             disableTypography={isActive}
             primary={primaryTextComponent}
         />;
         
         return (
-            <ListItem button>
+            <ListItem button onClick={this.itemClick(index)} key={index}>
                 <ListItemIcon color={color}>
                     <Icon />
                 </ListItemIcon>

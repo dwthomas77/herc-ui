@@ -8,23 +8,23 @@ class DrawerMenu extends React.Component {
         target: 'left',
     };
     
-    state = {
-        left: true,
-    };
+    constructor(props) {
+        super(props);
+        this.state = { left: props.menus.userMenu.open };
+    }
     
-    toggleDrawer = (target, open) => () => {
-        this.setState({
-            [target]: open,
-        });
+    componentWillReceiveProps = (nextProps) => {
+        if (nextProps.menus.userMenu.open !== this.state.left) {
+            this.state.left = nextProps.menus.userMenu.open;
+        }
     };
     
     render() {
-        const { target } = this.props;
-        
+        const { menus, target, userMenuClick } = this.props;
         return <div>
             <Drawer
                 open={this.state[target]}
-                onClose={this.toggleDrawer(target, false)}
+                onClose={userMenuClick}
             >
                 {this.props.menu}
             </Drawer>

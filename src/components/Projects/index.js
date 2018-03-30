@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UserMenu from 'components/UserMenu';
-import DrawerMenu from 'components/DrawerMenu';
+import DrawerMenu from 'controllers/DrawerMenu';
 import Navigation from 'controllers/Navigation';
 import Project from 'components/Project';
 import './styles.css';
