@@ -1,0 +1,21 @@
+definitions:
+
+  User:
+    type: object
+    properties:
+      firstname:
+        type: string
+      lastname:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      projects:
+        allof:
+          - $ref: "./projects.yaml#/definitions/Project"
+      transcripts:
+        type: array
+        transcript:
+          - $ref: "./projects.yaml#/definitions/Project"
+

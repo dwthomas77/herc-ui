@@ -1,0 +1,18 @@
+definitions:
+
+  Company:
+    type: object
+    properties:
+      name:
+        type: string
+      address:
+        type: string
+      city:
+        type: string
+      state:
+        type: string
+      zip:
+        type: string
+      user:
+        allof:
+          - $ref: "./users.yaml#/definitions/User"

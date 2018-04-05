@@ -1,0 +1,22 @@
+definitions:
+  Error:
+    type: object
+    required:
+      - message
+      - request_id
+    optional:
+      - errors
+    properties:
+      message:
+        type: string
+      request_id:
+        type: string
+      errors:
+        type: object
+
+  ResourceId:
+    type: integer
+    format: int64
+    readOnly: true
+
+

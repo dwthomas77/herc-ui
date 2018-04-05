@@ -1,0 +1,17 @@
+definitions:
+
+  Transcript:
+    type: object
+    properties:
+      hours:
+        type: int
+      date:
+        type: string
+      user:
+        allof:
+          - $ref: "./users.yaml#/definitions/User"
+
+
+Volunteer
+Year
+Hours Worked
