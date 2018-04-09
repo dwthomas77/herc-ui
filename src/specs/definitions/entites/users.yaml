@@ -14,8 +14,7 @@ definitions:
       projects:
         allof:
           - $ref: "./projects.yaml#/definitions/Project"
-      transcripts:
+      appointments:
         type: array
-        transcript:
-          - $ref: "./projects.yaml#/definitions/Project"
-
+        appointments:
+          - $ref: "./projects.yaml#/definitions/Appointment"

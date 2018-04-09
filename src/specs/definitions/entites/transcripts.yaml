@@ -10,8 +10,3 @@ definitions:
       user:
         allof:
           - $ref: "./users.yaml#/definitions/User"
-
-
-Volunteer
-Year
-Hours Worked

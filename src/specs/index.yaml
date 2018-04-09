@@ -20,7 +20,7 @@ produces:
 tags:
   - name: Companies
   - name: Projects
-  - name: Transcripts
+  - name: Appointments
   - name: Volunteers
   - name: Works
 

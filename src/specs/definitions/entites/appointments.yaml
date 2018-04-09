@@ -1,0 +1,19 @@
+definitions:
+
+  appointment:
+    type: object
+    properties:
+      startTimestamp:
+        type: string
+      endTimestamp:
+        type: string
+      approved:
+        type: bool
+      user:
+        allof:
+            - $ref: "./users.yaml#/definitions/User"
+      project:
+        allof:
+            - $ref: "./projects.yaml#/definitions/Project"
+
+

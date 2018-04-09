@@ -7,24 +7,19 @@ definitions:
         type: string
       description:
         type: string
-      userQuantity:
-        type: string
-      hoursPerUser:
-        type: string
       fromDate:
         type: string
       toDate:
         type: string
-      anytime:
-        type: bool
-      approved:
-        type: bool
       company:
         allof:
-          - $ref: "./users.yaml#/definitions/Company"
+          - $ref: "./companies.yaml#/definitions/Company"
       users:
         type: array
         users:
             - $ref: "./users.yaml#/definitions/User"
-
+      appointments:
+        type: array
+          appointments:
+            - $ref: "./appointments.yaml#/definitions/Appointment"
 
