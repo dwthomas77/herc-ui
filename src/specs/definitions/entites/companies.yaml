@@ -13,6 +13,3 @@ definitions:
         type: string
       zip:
         type: string
-      user:
-        allof:
-          - $ref: "./users.yaml#/definitions/User"
