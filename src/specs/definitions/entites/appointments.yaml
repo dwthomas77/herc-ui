@@ -9,6 +9,9 @@ definitions:
         type: string
       approved:
         type: bool
+      approvalUser:
+        allof:
+            - $ref: "./users.yaml#/definitions/User"
       user:
         allof:
             - $ref: "./users.yaml#/definitions/User"
