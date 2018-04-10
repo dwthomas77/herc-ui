@@ -22,7 +22,6 @@ tags:
   - name: Projects
   - name: Appointments
   - name: Volunteers
-  - name: Works
 
 responses:
   NotFound:

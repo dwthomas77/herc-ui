@@ -7,8 +7,13 @@ definitions:
         type: string
       endTimestamp:
         type: string
+      hours:
+        type: int
       approved:
         type: bool
+      approvalUser:
+        allof:
+            - $ref: "./users.yaml#/definitions/User"
       user:
         allof:
             - $ref: "./users.yaml#/definitions/User"
