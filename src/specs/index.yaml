@@ -48,7 +48,7 @@ parameters:
     required: true
 
 paths:
-   /:
+    /:
       get:
         tags:
           - Index
@@ -58,4 +58,200 @@ paths:
           "200":
             description: "Index of all api calls"
             schema:
-              $ref: "./definitions/entities/index.yaml#/definitions/EntitiesIndex"
+              $ref: "./definitions/index.yaml#/definitions/EntitiesIndex"
+
+    /projects:
+      get:
+        tags:
+        summary: "get Projects"
+        operationId: getProjects
+        responses:
+          "200":
+            description: "Collection of all projects"
+            schema:
+              type: array
+              $ref: "./definitions/entities/projects.yaml#/definitions/Project"
+
+      put:
+        tags:
+        summary: "Adds a project"
+        operationId: putProject
+        responses:
+          200:
+           description: "Collection of all projects"
+            schema:
+              $ref: "./definitions/entities/projects.yaml#/definitions/Project"
+
+    /projects/{$id}:
+      get:
+        tags:
+        summary: "gets a specific project"
+        onperationId: getProject
+        responses:
+          200:
+            description: "project object"
+            schema:
+              $ref: "./definitions/entities/projects.yaml#/definitions/Project"
+      post:
+        tags:
+        summary: "updates a specific project"
+        onperationId: updateProject
+        responses:
+          200:
+            description: "project object"
+            schema:
+              $ref: "./definitions/entities/projects.yaml#/definitions/Project"
+      delete:
+        tags:
+        summary: "gets a specific project"
+        onperationId: deleteProject
+        responses:
+          200:
+            description: "delete successful"
+
+    /appointments:
+      get:
+        tags:
+        summary: "get Appointments"
+        operationId: getAppointments
+        responses:
+          "200":
+            description: "Collection of all appointments"
+            schema:
+              type: array
+              $ref: "./definitions/entities/appointments.yaml#/definitions/Appointment"
+
+      put:
+        tags:
+        summary: "Adds a appointment"
+        operationId: putAppointment
+        responses:
+          200:
+           description: "Collection of all appointments"
+            schema:
+              $ref: "./definitions/entities/appointments.yaml#/definitions/Appointment"
+
+    /appointments/{$id}:
+      get:
+        tags:
+        summary: "gets a specific appointment"
+        onperationId: getAppointment
+        responses:
+          200:
+            description: "appointment object"
+            schema:
+              $ref: "./definitions/entities/appointments.yaml#/definitions/Appointment"
+      post:
+        tags:
+        summary: "updates a specific appointment"
+        onperationId: updateAppointment
+        responses:
+          200:
+            description: "appointment object"
+            schema:
+              $ref: "./definitions/entities/appointments.yaml#/definitions/Appointment"
+      delete:
+        tags:
+        summary: "gets a specific appointment"
+        onperationId: deleteAppointment
+        responses:
+          200:
+            description: "delete successful"
+
+    /companies:
+      get:
+        tags:
+        summary: "get Companies"
+        operationId: getCompanies
+        responses:
+          "200":
+            description: "Collection of all companies"
+            schema:
+              type: array
+              $ref: "./definitions/entities/companies.yaml#/definitions/Company"
+
+      put:
+        tags:
+        summary: "Adds a company"
+        operationId: putCompany
+        responses:
+          200:
+           description: "Collection of all companies"
+            schema:
+              $ref: "./definitions/entities/companies.yaml#/definitions/Company"
+
+    /companies/{$id}:
+      get:
+        tags:
+        summary: "gets a specific company"
+        onperationId: getCompany
+        responses:
+          200:
+            description: "company object"
+            schema:
+              $ref: "./definitions/entities/companies.yaml#/definitions/Company"
+      post:
+        tags:
+        summary: "updates a specific company"
+        onperationId: updateCompany
+        responses:
+          200:
+            description: "company object"
+            schema:
+              $ref: "./definitions/entities/companies.yaml#/definitions/Company"
+      delete:
+        tags:
+        summary: "gets a specific company"
+        onperationId: deleteCompany
+        responses:
+          200:
+            description: "delete successful"
+
+    /companies:
+      get:
+        tags:
+        summary: "get Companies"
+        operationId: getCompanies
+        responses:
+          "200":
+            description: "Collection of all companies"
+            schema:
+              type: array
+              $ref: "./definitions/entities/companies.yaml#/definitions/Company"
+
+      put:
+        tags:
+        summary: "Adds a company"
+        operationId: putCompany
+        responses:
+          200:
+           description: "Collection of all companies"
+            schema:
+              $ref: "./definitions/entities/companies.yaml#/definitions/Company"
+
+    /companies/{$id}:
+      get:
+        tags:
+        summary: "gets a specific company"
+        onperationId: getCompany
+        responses:
+          200:
+            description: "company object"
+            schema:
+              $ref: "./definitions/entities/companies.yaml#/definitions/Company"
+      post:
+        tags:
+        summary: "updates a specific company"
+        onperationId: updateCompany
+        responses:
+          200:
+            description: "company object"
+            schema:
+              $ref: "./definitions/entities/companies.yaml#/definitions/Company"
+      delete:
+        tags:
+        summary: "gets a specific company"
+        onperationId: deleteCompany
+        responses:
+          200:
+            description: "delete successful"

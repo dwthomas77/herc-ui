@@ -13,6 +13,7 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.6",
+    "redoc": "^2.0.0-alpha.17",
     "redux": "^3.7.1",
     "redux-saga": "^0.15.4",
     "typeface-roboto": "0.0.45"
