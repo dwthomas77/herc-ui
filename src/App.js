@@ -16,6 +16,9 @@ import './App.css';
 /** MATERIAL UI **/
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import theme from 'theme.js';
+/** REDOC **/
+
+
 const hercTheme = createMuiTheme(theme);
 
 class App extends Component {
