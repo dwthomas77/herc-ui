@@ -1,19 +1,18 @@
 herc.Firebase = class{
 
   constructor() {
-    // Firebase SDK.
-    this.database = firebase.database();
-    this.storage = firebase.storage();
-    this.auth = firebase.auth();
-
-    // Firebase references that are listened to.
-    this.firebaseRefs = [];
+    const projectRef = db.collection("projects");
+    const companyRef = db.collection("companies");
+    const appointmentsRef = db.collection("appointments");
   }
 
+  getPropjects(){
 
+    return
+  }
 
   putProjects(){
-    const projectObject = {
+    const projectObj = {
       name: commentText,
       company: firebase.database.ServerValue.TIMESTAMP,
       author: {
@@ -25,7 +24,7 @@ herc.Firebase = class{
     return this.database.ref(`projects`).update();
   };
 
-  getProjectById(id)
+  getProjectById(id);
 
 };
 herc.firebase = new herc.Firebase();
