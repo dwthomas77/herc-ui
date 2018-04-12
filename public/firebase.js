@@ -1,30 +1,35 @@
-herc.Firebase = class{
+herc.Firebase = class {
 
   constructor() {
-    const projectRef = db.collection("projects");
-    const companyRef = db.collection("companies");
-    const appointmentsRef = db.collection("appointments");
+    const db = firebase.firestore();
+    this.projectRef = db.collection('projects');
+    this.companyRef = db.collection('companies');
+    this.appointmentsRef = db.collection('appointments');
   }
 
-  getPropjects(){
-
-    return
+  getPropjects() {
+    return this.projectRef.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+      });
+    });
   }
 
-  putProjects(){
-    const projectObj = {
-      name: commentText,
-      company: firebase.database.ServerValue.TIMESTAMP,
-      author: {
-        uid: this.auth.currentUser.uid,
-        full_name: this.auth.currentUser.displayName,
-        profile_picture: this.auth.currentUser.photoURL
-      }
-    };
-    return this.database.ref(`projects`).update();
-  };
+  getCompanies() {
+    return this.companyRef.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+      });
+    });
+  }
 
-  getProjectById(id);
+  getAppointments() {
+    return this.appointmentsRef.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+      });
+    });
+  }
 
 };
 herc.firebase = new herc.Firebase();
